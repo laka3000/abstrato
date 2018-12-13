@@ -1,7 +1,6 @@
 $(document).ready(function () {
-  getNewTerm();
-
   $('#term').click(function() { searchForTerm() });
+
   $('#button').click(function() { getNewTerm() });
 });
 
