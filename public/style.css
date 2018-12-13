@@ -1,6 +1,5 @@
 p {
   font-family: 'Noto Serif TC', serif;
-  font-size: 7.666vmin;
   font-weight: bold;
   text-align: center;
   cursor: pointer;
@@ -11,6 +10,7 @@ div.button-container {
 }
 
 div.button-container p {
+  font-size: 6.66vmin;
   margin: auto;
 }
 
@@ -20,6 +20,7 @@ div.term-container {
 }
 
 div.term-container p {
+  font-size: 7.666vmin;
   margin: 0;
   position: absolute;
   top: 30%;
