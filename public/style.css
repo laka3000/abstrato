@@ -1,0 +1,26 @@
+p {
+  text-decoration: underline;
+  font-family: 'Noto Serif TC', serif;
+  font-size: 7.666vmin;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
+
+div.button-container {
+  margin-top: 5%;
+}
+
+div.term-container {
+   height: 60vh;
+   position: relative
+}
+
+div.term-container p {
+  margin: 0;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
