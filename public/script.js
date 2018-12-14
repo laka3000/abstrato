@@ -9,7 +9,7 @@ function searchForTerm() {
 }
 
 function getNewTerm() {
-  $.getJSON(window.location.origin + '/new_term', function(data) {
+  $.getJSON('/new_term', function(data) {
     appendNewTerm(data);
   })
 
