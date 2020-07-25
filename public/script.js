@@ -1,23 +1,25 @@
-$(document).ready(function () {
-  $('#term').click(function() { searchForTerm() });
+window.onload = () => {
+  const cta = document.querySelector('#cta');
+  const term = document.querySelector('#term');
+  const fallback = 'Estagiário de analista de sistemas para internet';
 
-  $('#button').click(function() { getNewTerm() });
-});
+  cta.addEventListener('click', () => {
+    let result;
 
-function searchForTerm() {
-  window.open('http://google.com/search?q=' + $('#term')[0].innerText);
-}
-
-function getNewTerm() {
-  $.getJSON('/new_term', function(data) {
-    appendNewTerm(data);
-  })
-
-  .fail(function() {
-    appendNewTerm('Estagiário de analista de sistemas para internet');
+    axios.get('/new_term')
+    .then(({ data }) => {
+      result = data;
+    })
+    .catch(() => {
+      result = fallback;
+    })
+    .then(() => {
+      term.innerText = result;
+      term.style.display = 'initial';
+    })
   });
-}
 
-function appendNewTerm(newTerm) {
-  $('#term')[0].innerText = newTerm;
-}
+  term.addEventListener('click', () => {
+    window.open(`http://google.com/search?q=${term.innerText}`);
+  });
+};
